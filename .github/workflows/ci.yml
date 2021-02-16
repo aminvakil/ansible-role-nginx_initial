@@ -10,7 +10,7 @@ name: CI
 
 defaults:
   run:
-    working-directory: 'aminvakil.template'
+    working-directory: 'aminvakil.nginx_initial'
 
 jobs:
 
@@ -21,7 +21,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'aminvakil.template'
+          path: 'aminvakil.nginx_initial'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -47,7 +47,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'aminvakil.template'
+          path: 'aminvakil.nginx_initial'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -73,7 +73,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'aminvakil.template'
+          path: 'aminvakil.nginx_initial'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
