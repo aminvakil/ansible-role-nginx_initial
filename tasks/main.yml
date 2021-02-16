@@ -16,3 +16,14 @@
     src: templates/etc/nginx/nginx.conf.j2
     dest: /etc/nginx/nginx.conf
     mode: '0600'
+
+- name: Change permissions of nginx folders
+  file:
+    path: /etc/nginx/{{ item }}
+    mode: '0700'
+  loop:
+    - conf.d
+    - modules-available
+    - modules-enabled
+    - sites-available
+    - sites-enabled
