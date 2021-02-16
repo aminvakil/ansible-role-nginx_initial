@@ -1,5 +1,8 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    letsencrypt: "{{ lookup('env', 'LETSENCRYPT') }}"
+    cloudflare: "{{ lookup('env', 'CLOUDFLARE') }}"
   roles:
-    - role: aminvakil.template
+    - role: aminvakil.nginx_initial

@@ -1,1 +1,13 @@
 ---
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    install_recommends: no
+    state: present
+  notify: restart nginx
+
+- name: Enable service
+  systemd:
+    name: nginx
+    enabled: yes
