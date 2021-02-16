@@ -41,6 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        cloudflare: [false, true]
         distro: [debian10]
 
     steps:
@@ -63,6 +64,7 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
+          CLOUDFLARE: ${{ matrix.cloudflare }}
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'

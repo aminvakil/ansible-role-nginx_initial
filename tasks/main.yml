@@ -27,3 +27,7 @@
     - modules-enabled
     - sites-available
     - sites-enabled
+
+- name: Include cloudflare configurations
+  include_tasks: cloudflare.yml
+  when: cloudflare | bool
